@@ -1,11 +1,18 @@
 'use strict';
 let operation=[];
+let obj={"add" : "+",
+       "mult" : "*",
+        "divide" : "/",
+        "minus" : "-",
+        "point" : "."
+};
 
 function insert(data){
-    document.getElementById("display").innerHTML+=data ;
-    operation.push(data);
-    console.log(operation);
-
+   if(data=="point"){document.getElementById("display").innerHTML+=obj[data]
+        operation.push(obj[data]);}
+    else{document.getElementById("display").innerHTML+=data
+    operation.push(data)};
+    console.log(operation); 
 }
 function CLEAR(){
     operation.splice(0,operation.length);
@@ -24,10 +31,10 @@ let numm=[];
 
 function operate(data){
 
-    
+    let sym=obj[data];
     operation.push(data);
     index=operation.indexOf(data);
-    document.getElementById("display").innerHTML+=data ;
+    document.getElementById("display").innerHTML+=sym ;
     console.log(operation);
     
    }
